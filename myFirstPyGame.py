@@ -1,4 +1,4 @@
-# My First PyGame, Ashley Wright, 11/29/21, 2:25pm, v0.1
+# My First PyGame, Ashley Wright, 11/29/21, 2:41pm, v0.2
 
 import pygame, sys 
 from pygame.locals import * 
@@ -16,3 +16,12 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
+
+# Setup font.
+basicfont = pygame.font.SysFont(None, 48)
+
+# Setup text.
+text = basicFont.render('Hello, world', True, WHITE, BLUE)
+textRect = text.get_rect()
+textRect.centerx = windowSurface.get_rect().centerx
+textRect.centery = windowSurface.get_rect().centery
