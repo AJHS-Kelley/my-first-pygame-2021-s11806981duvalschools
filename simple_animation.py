@@ -1,4 +1,4 @@
-# Simple Animation with PyGame, Ashley Wright, 1/27/22, 2:13PM, v0.6
+# Simple Animation with PyGame, Ashley Wright, 1/27/22, 2:34PM, v0.7
 
 import pygame, sys, time
 from pygame.locals import *
@@ -57,3 +57,31 @@ while True:
         if b['dir'] == UPRIGHT:
             b['rect'].left += MOVESPEED
             b['rect'].top -= MOVESPEED    
+
+        if b['rect'].top < 0:
+            # The box has moved past the top.
+            if b['dir'] == UPLEFT:
+                b['dir'] = DOWNLEFT
+            if b['dir'] == UPRIGHT:
+                b['dir'] = DOWNRIGHT
+            if b['rect'].bottom > WINDOWHEIGHT:
+                # The box has moved past the bottom.
+                if b['dir'] == DOWLEFT:
+                    b['dir'] = UPLEFT
+                if b['dir'] == DOWNRIGHT:
+                    b['dir'] = UPRIGHT
+            if b['rect'].left < 0:
+                # The box has moved past the left.
+                if b['dir'] == DOWNLEFT:
+                    b['dir'] = DOWNRIGHT
+                if b['dir'] == UPLEFT:
+                    b['dir'] = UPRIGHT 
+            if b['rect'].right > WINDOWWIDTH: 
+                #  The box has moved past the right.
+                if b['dir'] == DOWNRIGHT:
+                    b['dir'] == DOWNLEFT
+                if b['dir'] ==  UPRIGHT:
+                     b['dir'] == UPLEFT
+
+
+
