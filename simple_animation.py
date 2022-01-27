@@ -1,4 +1,4 @@
-# Simple Animation with PyGame, Ashley Wright, 1/25/22, 2:40PM, v0.5
+# Simple Animation with PyGame, Ashley Wright, 1/27/22, 2:13PM, v0.6
 
 import pygame, sys, time
 from pygame.locals import *
@@ -53,4 +53,7 @@ while True:
             b['rect'].top += MOVESPEED
         if b['dir'] == UPLEFT:
             b['rect'].left -= MOVESPEED
-            b['rect'].top     
+            b['rect'].top -= MOVESPEED     
+        if b['dir'] == UPRIGHT:
+            b['rect'].left += MOVESPEED
+            b['rect'].top -= MOVESPEED    
