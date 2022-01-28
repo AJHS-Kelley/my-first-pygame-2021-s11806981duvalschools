@@ -1,4 +1,4 @@
-# Simple Animation with PyGame, Ashley Wright, 1/27/22, 2:29PM, v0.8
+# Simple Animation with PyGame, Ashley Wright, 1/28/22, 8:55PM, v0.8
 
 import pygame, sys, time
 from pygame.locals import *
@@ -39,10 +39,11 @@ while True:
     for event in pygame.event.get():
         if event.type == QUIT:
             pygame.quit()
-                sys.exit()
-
+            
+            sys.exit()
+    
     windowSurface.fill(WHITE)     
-
+    
     for b in boxes: 
         # Move the box data structure.
         if b['dir'] == DOWNLEFT:
@@ -56,7 +57,7 @@ while True:
             b['rect'].top -= MOVESPEED     
         if b['dir'] == UPRIGHT:
             b['rect'].left += MOVESPEED
-            b['rect'].top -= MOVESPEED    
+            b['rect'].top -= MOVESPEED
 
         if b['rect'].top < 0:
             # The box has moved past the top.
